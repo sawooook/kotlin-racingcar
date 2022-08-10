@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="racingcar.v1.CarMoveTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-10T11:15:38" hostname="LM-047773-00.local" time="0.017">
+  <properties/>
+  <testcase name="move()를 하게 되면 움직임 숫자가 1 증가한다()" classname="racingcar.v1.CarMoveTest" time="0.017"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
