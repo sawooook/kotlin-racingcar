@@ -1,15 +1,12 @@
 package racingcar.domain
 
 import racingcar.domain.strategy.MoveStrategy
+import racingcar.domain.util.SPLIT_WORD
 
 class RacingGame(
     private val carList: String,
     private val racingCount: Int
 ) {
-
-    companion object {
-        private const val SPLIT_WORD = ","
-    }
 
     fun start(moveStrategy: MoveStrategy): List<Car> {
         val racingCar = getParticipate(carList)

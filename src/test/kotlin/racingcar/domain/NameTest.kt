@@ -8,7 +8,6 @@ import org.junit.jupiter.params.provider.ValueSource
 
 class NameTest {
 
-
     @Test
     fun `자동차의 이름은 5자를 넘을 수 없다`() {
         assertThrows(IllegalArgumentException::class.java) {

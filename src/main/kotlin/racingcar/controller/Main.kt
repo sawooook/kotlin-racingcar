@@ -15,7 +15,8 @@ fun main() {
     StartRacingView.getRacingCount()
     val racingCount = scanner.nextInt()
 
-    val result = RacingGame(racingCarList, racingCount).start(RandomMoveStrategy())
+    val result = RacingGame(racingCarList, racingCount)
+        .start(RandomMoveStrategy())
 
     result.forEach {
         println(it.locationValue.location)

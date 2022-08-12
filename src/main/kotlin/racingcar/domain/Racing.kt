@@ -14,12 +14,16 @@ class Racing(
         val highLocation = getHighLocation(carList)
 
         carList.forEach {
-            if (it.locationValue.isHighLocation(highLocation)) {
-                winnerCar.add(it)
-            }
+            addWinnerCar(it, highLocation, winnerCar)
         }
 
         return winnerCar
+    }
+
+    private fun addWinnerCar(car: Car, highLocation: Int, winnerCar: MutableList<Car>) {
+        if (car.locationValue.isHighLocation(highLocation)) {
+            winnerCar.add(car)
+        }
     }
 
     private fun getHighLocation(carList: List<Car>): Int {

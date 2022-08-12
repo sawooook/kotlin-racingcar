@@ -10,7 +10,7 @@ data class NameValue(
         }
 
         if (isUnderLength()) {
-            throw IllegalArgumentException("이름은 공백을수 없습니다.")
+            throw IllegalArgumentException("이름은 공백일 수 없습니다.")
         }
     }
 
