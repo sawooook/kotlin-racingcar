@@ -8,5 +8,5 @@ data class LocationValue(
         location += 1
     }
 
-    fun isHighLocation(highLocation: Int): Boolean = (highLocation == location)
+    fun isMaxLocation(highLocation: Int): Boolean = (highLocation == location)
 }
