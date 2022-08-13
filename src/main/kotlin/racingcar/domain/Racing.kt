@@ -6,34 +6,16 @@ class Racing(
     private val carList: List<Car>
 ) {
 
-    fun start(moveStrategy: MoveStrategy): List<Car> =
-        carList.map { it.move(moveStrategy) }
+    fun start(moveStrategy: MoveStrategy): List<Car> = carList.map { it.move(moveStrategy) }
 
-    fun getWinner(): List<Car> {
-        val winnerCar = mutableListOf<Car>()
-        val highLocation = getHighLocation(carList)
-
-        carList.forEach {
-            addWinnerCar(it, highLocation, winnerCar)
+    fun getWinner(): List<Car> =
+        carList.filter {
+            it.locationValue.isMaxLocation(
+                getMaxLocation(carList)
+            )
         }
 
-        return winnerCar
-    }
-
-    private fun addWinnerCar(car: Car, highLocation: Int, winnerCar: MutableList<Car>) {
-        if (car.locationValue.isHighLocation(highLocation)) {
-            winnerCar.add(car)
-        }
-    }
-
-    private fun getHighLocation(carList: List<Car>): Int {
-        var highLocation = Integer.MIN_VALUE
-        carList.forEach {
-            if (highLocation < it.locationValue.location) {
-                highLocation = it.locationValue.location
-            }
-        }
-
-        return highLocation
-    }
+    private fun getMaxLocation(carList: List<Car>): Int =
+        carList.maxOfOrNull { it.locationValue.location }
+            ?: throw IllegalArgumentException("자동차의 위치가 존재하지 않습니다.")
 }
